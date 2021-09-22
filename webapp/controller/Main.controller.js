@@ -14,7 +14,7 @@ sap.ui.define([
             formatter: formatter,
 
 			onInit: function () {
-                console.log("Se inicia aplicativo");
+                console.log("Se inicia aplicativo desde BAS");
             },
             
             onPress: function (oEvent) {
