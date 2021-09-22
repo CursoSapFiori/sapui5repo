@@ -56,6 +56,10 @@
         "settings": {
           "bundleName": "ccss.sap.projectccss.i18n.i18n"
         }
+      },
+      "movies": {
+          "type": "sap.ui.model.json.JSONModel",
+          "uri": "model/Movies.json"
       }
     },
     "resources": {
