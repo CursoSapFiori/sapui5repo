@@ -1,3 +1,4 @@
 {
-    "actions": []
+    "actions": [],
+    "git.ignoreLimitWarning": true
 }

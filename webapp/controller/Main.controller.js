@@ -14,7 +14,7 @@ sap.ui.define([
             formatter: formatter,
 
 			onInit: function () {
-
+                console.log("Se inicia aplicativo");
             },
             
             onPress: function (oEvent) {
