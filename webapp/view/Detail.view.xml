@@ -1,0 +1,26 @@
+<mvc:View controllerName="ccss.sap.projectccss.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout">
+
+            <Page id="" title="{movies>cinemaName] - {path: '{movies>startDate]', type: 'sap.ui.model.type.Date', formatOptions: { source: {pattern: 'MM/dd/yyyy/hh:mm:ss'}, relative: true, relatuveScale: 'auto'}}" showNavButton="true" navButtonPress=".onBack">
+                <content>
+                    <FlexBox wrap="Wrap">
+                        <l:VerticalLayout id="generalDetails">
+                            <core:Icon src="{movies>icon}" size="3rem" class="sapUiMediumMarginBottom"></core:Icon>
+                            <Label text="{i18n>cinemaAddress}" design="Bold"></Label>
+                            <Text text="{movies>cinemaAddress}"></Text>
+                            <Label text="{i18n>special}" design="Bold"></Label>
+                            <Text text="{movies>special}"></Text>
+                            <Label text="{i18n>seats}" design="Bold"></Label>
+                            <Text text="{movies>seats}"></Text>
+                            <Label text="{i18n>technicalDetails}" design="Bold"></Label>
+                            <Text text="{movies>technicalDetails}"></Text>
+                        </l:VerticalLayout>
+                        <Image width="100%" src="{movies>pic}"/>
+                    </FlexBox>
+                </content>
+            </Page>
+ 
+</mvc:View>

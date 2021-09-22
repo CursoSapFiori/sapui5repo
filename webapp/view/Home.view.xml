@@ -1,0 +1,41 @@
+<mvc:View controllerName="ccss.sap.projectccss.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:unified="sap.ui.unified">
+
+    <Page title="{i18n>title}">
+        <content>
+            <Image src="images/MoviesHeader.png" width="100%" tooltip="{i18n>imageTooltip}"></Image>
+            <f:SimpleForm id="form" editable="true" layout="ColumnLayout" title="{i18n>titleForm}" columnsM="2" columnsL="3" columnsXL="3">
+                <f:content>
+                    <Label text="{i18n>labelCity}" labelFor="city"></Label>
+                    <SearchField id="city" placeholder="{i18n>cityPlaceholder}" showSearchButton="false"></SearchField>
+                    <Label text="{i18n>labelGenre}" labelFor="genre"></Label>
+                    <Select id="genre">
+                        <core:ListItem icon="sap-icon://video" key="" text="{i18n>genreAll}"></core:ListItem>
+                        <core:ListItem icon="sap-icon://physical-activity" key="Action" text="{i18n>genreAction}"></core:ListItem>
+                        <core:ListItem icon="sap-icon://video" key="Horror" text="{i18n>genreHorror}"></core:ListItem>
+                        <core:ListItem icon="sap-icon://video" key="SienceFiction" text="{i18n>genreScienceFiction}"></core:ListItem>
+                    </Select>
+                    <Button text="{i18n>buttonMovieSearch}" type="Emphasized" press="onPress"></Button>
+                </f:content>
+            </f:SimpleForm>
+            <PlanningCalendar id="calendar" startDate="{path: 'movies>/initDate', formatter: '.formatter.formatDate'}" rows="{movies>/movies}" appointmentsVisualization="Filled" appointmentSelect=".onAppointmentSelect($($parameters>/appointment))">
+                <toolbarContent>
+                    <Title text="{i18n>calendarTitle}" titleStyle="H3"></Title>
+                </toolbarContent>
+                <rows>
+                    <PlanningCalendarRow title="{movies>name}" text="{movies>genre}" appointments="{path: 'movies>appointments', templateShareable: 'true'}">
+                        <appointments>
+                            <unified:CalendarAppointment startDate="{path: 'movies>startDate', formatter: '.formatter.formatDate'}" endDate="{path: 'movies>endDate', formatter: '.formatter.formatDate'}" title="{movies>info}" text="{movies>cinemaName}" icon="{movies>icon}" type="{movies>type}">
+                            </unified:CalendarAppointment>
+                        </appointments>
+                    </PlanningCalendarRow>
+                </rows>
+            </PlanningCalendar>
+        </content>
+    </Page>
+
+</mvc:View>
