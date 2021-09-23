@@ -46,7 +46,9 @@ sap.ui.define([
                 console.log(aRows);
                 aRows.forEach(function (oItem) {
                     var oAppointmentsBinding = oItem.getBinding("appointments");
+                    console.log(oAppointmentsBinding);
                     oAppointmentsBinding.filter(oFilterCity);
+                    console.log(oAppointmentsBinding);
                 });
 
             },
@@ -55,7 +57,11 @@ sap.ui.define([
                 var oContext = oAppointment.getBindingContext("movies"),
                     sPath = oContext.getPath();
 
+                console.log(oContext);
+                console.log(sPath);
+
                 var aParameters = sPath.split("/");
+                console.log(aParameters);
                 UIComponent.getRouterFor(this).navTo("Detail", {
                     movieId: aParameters[2],
                     appointmentId: aParameters[4]

@@ -20,6 +20,9 @@ sap.ui.define([
                     sMovieIndex = oEvent.getParameter("arguments")["movieId"],
                     sAppointmentIndex = oEvent.getParameter("arguments")["appointmentId"];
 
+                console.log(sMovieIndex);
+                console.log(sAppointmentIndex);
+
                 oView.bindElement({
                     path: "/movies/" + sMovieIndex + "/appointments/" + sAppointmentIndex,
                     model: "movies",
@@ -33,13 +36,8 @@ sap.ui.define([
                 var oView = this.getView(),
                     oElementBinding = oView.getElementBinding("movies"),
                     sPath = oElementBinding.getPath();
-
-                // if the path to the data does not exist we navigate to the not found page
-                /*
-			if (!oView.getModel("movies").getObject(sPath)) {
-				UIComponent.getRouterFor(this).getTargets().display("NotFound");
-            }
-            */
+                console.log(oElementBinding);
+                console.log(sPath);
             },
 
             onNavBack: function () {
