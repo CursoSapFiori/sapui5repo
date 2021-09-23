@@ -4,7 +4,7 @@
     xmlns:core="sap.ui.core"
     xmlns:l="sap.ui.layout">
 
-            <Page id="" title="{movies>cinemaName] - {path: '{movies>startDate]', type: 'sap.ui.model.type.Date', formatOptions: { source: {pattern: 'MM/dd/yyyy/hh:mm:ss'}, relative: true, relatuveScale: 'auto'}}" showNavButton="true" navButtonPress=".onBack">
+            <Page id="" title="{movies>cinemaName] - {path: '{movies>startDate]', type: 'sap.ui.model.type.Date', formatOptions: { source: {pattern: 'MM/dd/yyyy/hh:mm:ss'}, relative: true, relatuveScale: 'auto'}}" showNavButton="true" navButtonPress=".onNavBack">
                 <content>
                     <FlexBox wrap="Wrap">
                         <l:VerticalLayout id="generalDetails">

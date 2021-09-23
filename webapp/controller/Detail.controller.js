@@ -16,27 +16,30 @@ sap.ui.define([
             },
 
             _onDetailMatched: function (oEvent) {
-                var oView = this.getView();
-                sMoviewIndex = oEvent.getParameter("arguments")["movieId"],
+                var oView = this.getView(),
+                    sMovieIndex = oEvent.getParameter("arguments")["movieId"],
                     sAppointmentIndex = oEvent.getParameter("arguments")["appointmentId"];
 
-                console.log(oView, sMoviewIndex, sAppointmentIndex)
-
-                // Binding de nuestros elementos a la vista
-
                 oView.bindElement({
-                    path: "/movies/" + sMoviewIndex + "/appointments/" + sAppointmentIndex,
+                    path: "/movies/" + sMovieIndex + "/appointments/" + sAppointmentIndex,
                     model: "movies",
                     events: {
-                        change: this._onDetailMatched.bind(this)
+                        change: this._onBindingChange.bind(this)
                     }
-                })
+                });
             },
 
             _onBindingChange: function () {
                 var oView = this.getView(),
                     oElementBinding = oView.getElementBinding("movies"),
                     sPath = oElementBinding.getPath();
+
+                // if the path to the data does not exist we navigate to the not found page
+                /*
+			if (!oView.getModel("movies").getObject(sPath)) {
+				UIComponent.getRouterFor(this).getTargets().display("NotFound");
+            }
+            */
             },
 
             onNavBack: function () {
